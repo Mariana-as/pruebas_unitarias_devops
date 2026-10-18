@@ -148,3 +148,21 @@ def test_minimo_lista_negativa():
 
     # Assert
     assert resultado == -8
+
+
+def test_maximo_lista_vacia_lanza_error():
+    # Arrange
+    numeros = []
+
+    # Act y Assert
+    with pytest.raises(ValueError):
+        maximo(numeros)
+
+
+def test_minimo_lista_vacia_lanza_error():
+    # Arrange
+    numeros = []
+
+    # Act y Assert
+    with pytest.raises(ValueError):
+        minimo(numeros)
