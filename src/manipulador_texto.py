@@ -38,12 +38,15 @@ def contar_consonantes(cadena):
     return contador
 
 def es_palindromo(cadena):
-    """Verifica si una cadena es palíndromo."""
+    """Verifica si una cadena es palíndromo ignorando espacios y mayúsculas."""
     if not cadena:
         return False
 
-    # BUG 1: No maneja espacios ni mayúsculas/minúsculas
-    cadena_limpia = cadena
+    cadena_limpia = "".join(
+        caracter.lower()
+        for caracter in cadena
+        if caracter.isalnum()
+    )
     return cadena_limpia == cadena_limpia[::-1]
 
 def eliminar_duplicados(cadena):
@@ -89,12 +92,11 @@ def reemplazar_subcadena(cadena, vieja, nueva, max_reemplazos=-1):
         return cadena.replace(vieja, nueva, max_reemplazos)
 
 def dividir_en_palabras(cadena):
-    """Divide una cadena en palabras."""
+    """Divide una cadena en palabras, ignorando espacios repetidos."""
     if not cadena:
         return []
 
-    # BUG 2: No maneja múltiples espacios ni puntuación
-    return cadena.split(' ')
+    return cadena.split()
 
 def extraer_dominio(email):
     """Extrae el dominio de un email."""
