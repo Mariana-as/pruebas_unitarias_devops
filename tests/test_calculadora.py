@@ -14,155 +14,160 @@ from src.calculadora import (
 
 
 def test_sumar_positivos():
-    # Arrange
+    # Arrange:
     a, b = 5, 3
 
-    # Act
+    # Act:
     resultado = sumar(a, b)
 
-    # Assert
+    # Assert:
     assert resultado == 8
 
 
 def test_restar_numeros():
-    # Arrange
+    # Arrange:
     a, b = 10, 4
 
-    # Act
+    # Act:
     resultado = restar(a, b)
 
-    # Assert
+    # Assert:
     assert resultado == 6
 
 
 def test_multiplicar_numeros():
-    # Arrange
+    # Arrange:
     a, b = 6, 7
 
-    # Act
+    # Act:
     resultado = multiplicar(a, b)
 
-    # Assert
+    # Assert:
     assert resultado == 42
 
 
 def test_dividir_numeros():
-    # Arrange
+    # Arrange:
     a, b = 12, 3
 
-    # Act
+    # Act:
     resultado = dividir(a, b)
 
-    # Assert
+    # Assert:
     assert resultado == 4
 
 
 def test_dividir_por_cero_lanza_error():
-    # Arrange
+    # Arrange:
     a, b = 10, 0
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         dividir(a, b)
 
 
 def test_potencia():
-    # Arrange
+    # Arrange:
     base, exponente = 2, 3
 
-    # Act
+    # Act:
     resultado = potencia(base, exponente)
 
-    # Assert
+    # Assert:
     assert resultado == 8
 
 
 def test_raiz_cuadrada_positiva():
-    # Arrange
+    # Arrange:
     numero = 25
 
-    # Act
+    # Act:
     resultado = raiz_cuadrada(numero)
 
-    # Assert
+    # Assert:
     assert resultado == 5
 
 
 def test_raiz_cuadrada_negativa_lanza_error():
-    # Arrange
+    # Arrange:
     numero = -4
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         raiz_cuadrada(numero)
 
 
 def test_promedio_lista():
-    # Arrange
+    # Arrange:
     numeros = [2, 4, 6]
 
-    # Act
+    # Act:
     resultado = promedio(numeros)
 
-    # Assert
+    # Assert:
     assert resultado == 4
 
 
 def test_promedio_lista_vacia_lanza_error():
-    # Arrange
+    # Arrange:
     numeros = []
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         promedio(numeros)
 
 
 def test_maximo_lista():
-    # Arrange
+    # Arrange:
     numeros = [2, 8, 3]
 
-    # Act
+    # Act:
     resultado = maximo(numeros)
 
-    # Assert
+    # Assert:
     assert resultado == 8
 
 
 def test_minimo_lista_positiva():
-    # Arrange
+    # Arrange:
     numeros = [2, 5, 3]
 
-    # Act
+    # Act:
     resultado = minimo(numeros)
 
-    # Assert
+    # Assert:
     assert resultado == 2
 
 
 def test_minimo_lista_negativa():
-    # Arrange
+    # Arrange:
     numeros = [-5, -2, -8]
 
-    # Act
+    # Act:
     resultado = minimo(numeros)
 
-    # Assert
+    # Assert:
     assert resultado == -8
 
 
 def test_maximo_lista_vacia_lanza_error():
-    # Arrange
+    # Arrange:
     numeros = []
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         maximo(numeros)
 
 
 def test_minimo_lista_vacia_lanza_error():
-    # Arrange
+    # Arrange:
     numeros = []
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         minimo(numeros)

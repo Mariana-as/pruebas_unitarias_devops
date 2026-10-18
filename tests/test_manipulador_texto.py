@@ -17,112 +17,347 @@ from src.manipulador_texto import (
 
 
 def test_invertir_cadena():
-    assert invertir_cadena("hola") == "aloh"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'hola'
+    esperado = 'aloh'
+
+    # Act: ejecutar la función
+    resultado = invertir_cadena(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_invertir_cadena_vacia():
-    assert invertir_cadena("") == ""
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = ''
+    esperado = ''
+
+    # Act: ejecutar la función
+    resultado = invertir_cadena(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_contar_vocales():
-    assert contar_vocales("Hola Mundo") == 4
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'Hola Mundo'
+    esperado = 4
+
+    # Act: ejecutar la función
+    resultado = contar_vocales(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_contar_vocales_sin_vocales():
-    assert contar_vocales("rhythm") == 0
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'rhythm'
+    esperado = 0
+
+    # Act: ejecutar la función
+    resultado = contar_vocales(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_contar_consonantes():
-    assert contar_consonantes("Hola123!") == 2
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'Hola123!'
+    esperado = 2
+
+    # Act: ejecutar la función
+    resultado = contar_consonantes(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_contar_consonantes_vacio():
-    assert contar_consonantes("") == 0
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = ''
+    esperado = 0
+
+    # Act: ejecutar la función
+    resultado = contar_consonantes(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_es_palindromo_simple():
-    assert es_palindromo("reconocer") is True
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'reconocer'
+    esperado = True
+
+    # Act: ejecutar la función
+    resultado = es_palindromo(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_palindromo_con_mayusculas_y_espacios():
-    assert es_palindromo("Anita lava la tina") is True
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'Anita lava la tina'
+    esperado = True
+
+    # Act: ejecutar la función
+    resultado = es_palindromo(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_palindromo_no_palindromo():
-    assert es_palindromo("casa") is False
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'casa'
+    esperado = False
+
+    # Act: ejecutar la función
+    resultado = es_palindromo(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_palindromo_vacio():
-    assert es_palindromo("") is False
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = ''
+    esperado = False
+
+    # Act: ejecutar la función
+    resultado = es_palindromo(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_eliminar_duplicados():
-    assert eliminar_duplicados("banana") == "ban"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'banana'
+    esperado = 'ban'
+
+    # Act: ejecutar la función
+    resultado = eliminar_duplicados(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_capitalizar_palabras():
-    assert capitalizar_palabras("hola MUNDO") == "Hola Mundo"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'hola MUNDO'
+    esperado = 'Hola Mundo'
+
+    # Act: ejecutar la función
+    resultado = capitalizar_palabras(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_convertir_a_titulo():
-    assert convertir_a_titulo("el mundo feliz") == "El Mundo Feliz"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'el mundo feliz'
+    esperado = 'El Mundo Feliz'
+
+    # Act: ejecutar la función
+    resultado = convertir_a_titulo(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_reemplazar_subcadena():
-    assert reemplazar_subcadena("uno dos uno", "uno", "tres") == "tres dos tres"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'uno dos uno'
+    entrada_2 = 'uno'
+    entrada_3 = 'tres'
+    esperado = 'tres dos tres'
+
+    # Act: ejecutar la función
+    resultado = reemplazar_subcadena(entrada_1, entrada_2, entrada_3)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_reemplazar_subcadena_con_limite():
-    assert reemplazar_subcadena("a-a-a", "a", "b", 2) == "b-b-a"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'a-a-a'
+    entrada_2 = 'a'
+    entrada_3 = 'b'
+    entrada_4 = 2
+    esperado = 'b-b-a'
+
+    # Act: ejecutar la función
+    resultado = reemplazar_subcadena(entrada_1, entrada_2, entrada_3, entrada_4)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_dividir_en_palabras():
-    assert dividir_en_palabras("hola mundo") == ["hola", "mundo"]
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'hola mundo'
+    esperado = ['hola', 'mundo']
+
+    # Act: ejecutar la función
+    resultado = dividir_en_palabras(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_dividir_en_palabras_con_espacios_multiples():
-    assert dividir_en_palabras("hola   mundo") == ["hola", "mundo"]
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'hola   mundo'
+    esperado = ['hola', 'mundo']
+
+    # Act: ejecutar la función
+    resultado = dividir_en_palabras(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_extraer_dominio():
-    assert extraer_dominio("persona@ejemplo.com") == "ejemplo.com"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'persona@ejemplo.com'
+    esperado = 'ejemplo.com'
+
+    # Act: ejecutar la función
+    resultado = extraer_dominio(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_extraer_dominio_correo_invalido():
-    assert extraer_dominio("correo-invalido") == ""
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'correo-invalido'
+    esperado = ''
+
+    # Act: ejecutar la función
+    resultado = extraer_dominio(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_enmascarar_email():
-    assert enmascarar_email("mariana@ejemplo.com") == "m*****a@ejemplo.com"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'mariana@ejemplo.com'
+    esperado = 'm*****a@ejemplo.com'
+
+    # Act: ejecutar la función
+    resultado = enmascarar_email(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_enmascarar_email_usuario_corto():
-    assert enmascarar_email("ab@ejemplo.com") == "ab@ejemplo.com"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'ab@ejemplo.com'
+    esperado = 'ab@ejemplo.com'
+
+    # Act: ejecutar la función
+    resultado = enmascarar_email(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_normalizar_espacios():
-    assert normalizar_espacios("  hola   mundo  ") == "hola mundo"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = '  hola   mundo  '
+    esperado = 'hola mundo'
+
+    # Act: ejecutar la función
+    resultado = normalizar_espacios(entrada_1)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_truncar():
-    assert truncar("abcdef", 5) == "ab..."
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'abcdef'
+    entrada_2 = 5
+    esperado = 'ab...'
+
+    # Act: ejecutar la función
+    resultado = truncar(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_truncar_texto_corto():
-    assert truncar("hola", 10) == "hola"
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'hola'
+    entrada_2 = 10
+    esperado = 'hola'
+
+    # Act: ejecutar la función
+    resultado = truncar(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado == esperado
 
 
 def test_es_anagrama():
-    assert es_anagrama("Roma", "amor") is True
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'Roma'
+    entrada_2 = 'amor'
+    esperado = True
+
+    # Act: ejecutar la función
+    resultado = es_anagrama(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_anagrama_con_espacios():
-    assert es_anagrama("la mar", "alma r") is True
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'la mar'
+    entrada_2 = 'alma r'
+    esperado = True
+
+    # Act: ejecutar la función
+    resultado = es_anagrama(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_anagrama_no_coincide():
-    assert es_anagrama("casa", "perro") is False
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = 'casa'
+    entrada_2 = 'perro'
+    esperado = False
+
+    # Act: ejecutar la función
+    resultado = es_anagrama(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado
 
 
 def test_es_anagrama_con_cadena_vacia():
-    assert es_anagrama("", "amor") is False
+    # Arrange: preparar entradas y resultado esperado
+    entrada_1 = ''
+    entrada_2 = 'amor'
+    esperado = False
+
+    # Act: ejecutar la función
+    resultado = es_anagrama(entrada_1, entrada_2)
+
+    # Assert: comprobar el resultado
+    assert resultado is esperado

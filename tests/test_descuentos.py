@@ -11,212 +11,305 @@ from src.descuentos import (
 
 
 def test_aplicar_descuento():
-    # Arrange
+    # Arrange:
     precio = 100
     porcentaje = 20
 
-    # Act
+    # Act:
     resultado = aplicar_descuento(precio, porcentaje)
 
-    # Assert
+    # Assert:
     assert resultado == 80
 
 
 def test_aplicar_descuento_cero():
-    # Arrange
+    # Arrange:
     precio = 100
     porcentaje = 0
 
-    # Act
+    # Act:
     resultado = aplicar_descuento(precio, porcentaje)
 
-    # Assert
+    # Assert:
     assert resultado == 100
 
 
 def test_aplicar_descuento_precio_negativo_lanza_error():
-    # Arrange
+    # Arrange:
     precio = -10
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         aplicar_descuento(precio, 10)
 
 
 def test_aplicar_descuento_porcentaje_invalido_lanza_error():
-    # Arrange
+    # Arrange:
     porcentaje = 110
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         aplicar_descuento(100, porcentaje)
 
 
 def test_calcular_descuento():
-    # Arrange
+    # Arrange:
     precio = 200
     porcentaje = 15
 
-    # Act
+    # Act:
     resultado = calcular_descuento(precio, porcentaje)
 
-    # Assert
+    # Assert:
     assert resultado == 30
 
 
 def test_calcular_precio_final_con_descuento_e_impuesto():
-    # Arrange
+    # Arrange:
     precio = 100
     impuesto = 10
     descuento = 20
 
-    # Act
+    # Act:
     resultado = calcular_precio_final(precio, impuesto, descuento)
 
-    # Assert
+    # Assert:
     assert resultado == 88
 
 
 def test_calcular_precio_final_sin_descuento():
-    # Arrange
+    # Arrange:
     precio = 100
     impuesto = 10
     descuento = 0
 
-    # Act
+    # Act:
     resultado = calcular_precio_final(precio, impuesto, descuento)
 
-    # Assert
+    # Assert:
     assert resultado == 110
 
 
 def test_descuento_por_volumen_cantidad_menor_a_diez():
-    # Arrange
+    # Arrange:
     cantidad = 5
     precio_unitario = 10
 
-    # Act
+    # Act:
     resultado = descuento_por_volumen(cantidad, precio_unitario)
 
-    # Assert
+    # Assert:
     assert resultado == 50
 
 
 def test_descuento_por_volumen_cien_unidades():
-    # Arrange
+    # Arrange:
     cantidad = 100
     precio_unitario = 10
 
-    # Act
+    # Act:
     resultado = descuento_por_volumen(cantidad, precio_unitario)
 
-    # Assert
+    # Assert:
     assert resultado == 800
 
 
 def test_descuento_cumulativo():
-    # Arrange
+    # Arrange:
     precio = 100
     descuentos = [10, 20]
 
-    # Act
+    # Act:
     resultado = descuento_cumulativo(precio, descuentos)
 
-    # Assert
+    # Assert:
     assert resultado == 72
 
 
 def test_descuento_cumulativo_lista_vacia():
-    # Arrange
+    # Arrange:
     precio = 100
     descuentos = []
 
-    # Act
+    # Act:
     resultado = descuento_cumulativo(precio, descuentos)
 
-    # Assert
+    # Assert:
     assert resultado == 100
 
 
 def test_descuento_apilado():
-    # Arrange
+    # Arrange:
     precio = 100
     descuentos = [10, 20]
 
-    # Act
+    # Act:
     resultado = descuento_apilado(precio, descuentos)
 
-    # Assert
+    # Assert:
     assert resultado == 70
 
 
 def test_descuento_apilado_total_superior_a_cien_lanza_error():
-    # Arrange
+    # Arrange:
     precio = 100
     descuentos = [60, 50]
 
-    # Act y Assert
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
+        # Assert: comprobar la excepción esperada
         descuento_apilado(precio, descuentos)
 
 
 def test_calcular_descuento_precio_negativo_lanza_error():
+    # Arrange:
+    precio = -10
+    porcentaje = 20
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        calcular_descuento(-10, 20)
+        # Assert: comprobar la excepción esperada
+        calcular_descuento(precio, porcentaje)
 
 
 def test_calcular_descuento_porcentaje_invalido_lanza_error():
+    # Arrange:
+    precio = 100
+    porcentaje = 110
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        calcular_descuento(100, 110)
+        # Assert: comprobar la excepción esperada
+        calcular_descuento(precio, porcentaje)
 
 
 def test_calcular_precio_final_precio_negativo_lanza_error():
+    # Arrange:
+    precio = -100
+    impuesto = 10
+    descuento = 20
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        calcular_precio_final(-100, 10, 20)
+        # Assert: comprobar la excepción esperada
+        calcular_precio_final(precio, impuesto, descuento)
 
 
 def test_calcular_precio_final_impuesto_negativo_lanza_error():
+    # Arrange:
+    precio = 100
+    impuesto = -10
+    descuento = 20
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        calcular_precio_final(100, -10, 20)
+        # Assert: comprobar la excepción esperada
+        calcular_precio_final(precio, impuesto, descuento)
 
 
 def test_calcular_precio_final_descuento_invalido_lanza_error():
+    # Arrange:
+    precio = 100
+    impuesto = 10
+    descuento = 110
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        calcular_precio_final(100, 10, 110)
+        # Assert: comprobar la excepción esperada
+        calcular_precio_final(precio, impuesto, descuento)
 
 
 def test_descuento_por_volumen_cantidad_negativa_lanza_error():
+    # Arrange:
+    cantidad = -1
+    precio_unitario = 10
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        descuento_por_volumen(-1, 10)
+        # Assert: comprobar la excepción esperada
+        descuento_por_volumen(cantidad, precio_unitario)
 
 
 def test_descuento_por_volumen_precio_unitario_negativo_lanza_error():
+    # Arrange:
+    cantidad = 10
+    precio_unitario = -10
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        descuento_por_volumen(10, -10)
+        # Assert: comprobar la excepción esperada
+        descuento_por_volumen(cantidad, precio_unitario)
 
 
 def test_descuento_por_volumen_diez_unidades():
-    assert descuento_por_volumen(10, 10) == 95
+    # Arrange:
+    cantidad = 10
+    precio_unitario = 10
+    esperado = 95
+
+    # Act:
+    resultado = descuento_por_volumen(cantidad, precio_unitario)
+
+    # Assert:
+    assert resultado == esperado
 
 
 def test_descuento_por_volumen_cincuenta_unidades():
-    assert descuento_por_volumen(50, 10) == 425
+    # Arrange:
+    cantidad = 50
+    precio_unitario = 10
+    esperado = 425
+
+    # Act:
+    resultado = descuento_por_volumen(cantidad, precio_unitario)
+
+    # Assert:
+    assert resultado == esperado
 
 
 def test_descuento_cumulativo_precio_negativo_lanza_error():
+    # Arrange:
+    precio = -100
+    descuentos = [10]
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        descuento_cumulativo(-100, [10])
+        # Assert: comprobar la excepción esperada
+        descuento_cumulativo(precio, descuentos)
 
 
 def test_descuento_cumulativo_porcentaje_invalido_lanza_error():
+    # Arrange:
+    precio = 100
+    descuentos = [10, 110]
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        descuento_cumulativo(100, [10, 110])
+        # Assert: comprobar la excepción esperada
+        descuento_cumulativo(precio, descuentos)
 
 
 def test_descuento_apilado_precio_negativo_lanza_error():
+    # Arrange:
+    precio = -100
+    descuentos = [10]
+
+    # Act: ejecutar la función
     with pytest.raises(ValueError):
-        descuento_apilado(-100, [10])
+        # Assert: comprobar la excepción esperada
+        descuento_apilado(precio, descuentos)
 
 
 def test_descuento_apilado_lista_vacia():
-    assert descuento_apilado(100, []) == 100
+    # Arrange:
+    precio = 100
+    descuentos = []
+    esperado = 100
+
+    # Act:
+    resultado = descuento_apilado(precio, descuentos)
+
+    # Assert:
+    assert resultado == esperado

@@ -4,3 +4,7 @@ __pycache__/
 .pytest_cache/
 .coverage
 htmlcov/
+
+# Copias de seguridad temporales de pruebas
+tests/*.bak_aaa
+tests/*.bak_uniform_aaa
